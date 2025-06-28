@@ -17,6 +17,7 @@ const Home = () => {
                 <Grid size={4}><RouteCard /></Grid>
                 <Grid size={4}><RouteCard /></Grid>
 gittest
+gittest2
             </Grid>
         </Container>
     )
