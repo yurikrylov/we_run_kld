@@ -2,11 +2,12 @@ export const routes = [
     {
         id: 1,
         name: "Круг от Кофейни номер 3, 5 км",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus pharetra gravida ullamcorper. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam rhoncus mi non mi scelerisque, nec cursus ante varius. ",
         distance: 5,
         districts: ["Центральный"],
         trafficlight: "мало",
         attractions: [],
-        maplink:"",
+        maplink:"https://yandex.ru/maps/-/CCUFVCd6cC",
         fotolinks:[]
     },
        {
