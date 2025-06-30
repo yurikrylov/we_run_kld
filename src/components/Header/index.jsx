@@ -1,13 +1,14 @@
-import React from 'react'
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 const Header = () => {
   return (
-    <div>
-        <h1 >WE RUN KLD</h1>
-        <sub>маршруты для бега в Калининграде</sub> 
-
-        <div></div>
-    </div>
+    <Box sx={{ width: '100%' }}>
+      <Typography variant="h1" gutterBottom>
+        WE RUN KLD
+      </Typography>
+      </Box>
   )
 }
 

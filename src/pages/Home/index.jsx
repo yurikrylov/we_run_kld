@@ -14,8 +14,7 @@ const Home = () => {
             <Filters />
             <Grid container spacing={2}>
                 {routes.map((route) => {
-                    return <Grid size={4}><RouteCard route={route} /></Grid>
-                }
+                    return <Grid size={4} key={route.id}><RouteCard route={route} /></Grid>}
                 )}
 
             </Grid>

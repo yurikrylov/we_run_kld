@@ -1,13 +1,10 @@
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import Link  from '@mui/material/Link'; 
+import {Card, CardActions, CardContent, CardMedia, Typography, Link, Button} from '@mui/material';
 
 export default function RouteCard({route}) {
+
+
   return (
-    <Card sx={{ maxWidth: 345, height:380}}>
+    <Card sx={{ maxWidth: 345}}>
       <CardMedia
         sx={{ height: 140 }}
         image="https://mui.com/static/images/cards/contemplative-reptile.jpg"
@@ -22,7 +19,7 @@ export default function RouteCard({route}) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Link href={route.maplink} underline="none">КАРТА</Link>
+        <Button href={route.maplink} variant="text">КАРТА</Button>
       </CardActions>
     </Card>
   );
