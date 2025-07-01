@@ -4,70 +4,78 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Grid from '@mui/material/Grid';
-import {routes }from '../../data/rroutes'
+import { routes } from '../../data/rroutes'
 
-const regions = []
-routes.map((item)=>{
-  regions.push(item.district)
+var regions = []
+routes.map((item) => {
+  regions = ([...regions, ...item.districts])
 })
-const Filters = () => {
-  const [district, setDistrict] = React.useState('');
-  const handleDistrictChange = (event) => {
-    setDistrict(event.target.value);
+const uniqRegions = new Set([...regions])
+
+var trafficLights = []
+routes.map((item) => {
+  trafficLights.push(item.trafficlight)
+})
+const uniqTL = new Set([...trafficLights])
+
+
+const Filters = ({filters, setFilters}) => {
+  const handleSelectChange = (event) => {
+    const key = event.target.id
+      return  setFilters({...filters, [key]: event.target.textContext})      
   };
-  const [trafficLight, setTrafficLight] = React.useState('');
-  const handleTrafficLightChange = (event) => {
-    setTrafficLight(event.target.value);
-  };
-  const [attraction, setAttraction] = React.useState('');
-  const handleAttractionChange = (event) => {
-    setAttraction(event.target.value);
-  };
+
+
+
   return (
     <Grid container spacing={2}>
       <Grid size={4}>
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Район</InputLabel>
+          <InputLabel id="district-label">Район</InputLabel>
           <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={district}
+            labelId="district-label"
+            id="district-label"
+            value={filters.district}
             label="Район"
-            onChange={handleDistrictChange}
+            onChange={handleSelectChange}
           >
-            <MenuItem value={"Балтрайон"}>Балтрайон</MenuItem>
-            <MenuItem value={"Московский"}>Московский</MenuItem>
-            <MenuItem value={"Центральный"}>Центральный</MenuItem>
+            {[...uniqRegions].map((region, index) => {
+              return <MenuItem key={index} id={"district"} value={region}>{region}</MenuItem>
+
+            })}
+
           </Select>
         </FormControl>
       </Grid>
       <Grid size={4}>
 
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Сколько светофоров</InputLabel>
+          <InputLabel id="trafficLight-label">Сколько светофоров</InputLabel>
           <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={trafficLight}
+            labelId="trafficLight-label"
+            id="trafficLight"
+            value={filters.trafficLight}
             label="Сколько светофоров"
-            onChange={handleTrafficLightChange}
+            onChange={handleSelectChange}
           >
-            <MenuItem value={"Много"}>Много</MenuItem>
-            <MenuItem value={"Меньше"}>Меньше</MenuItem>
-            <MenuItem value={"Мало"}>Мало</MenuItem>
+            {[...uniqTL].map((item, index) => {
+              return <MenuItem key={index} value={item}>{item}</MenuItem>
+
+            })}
+
           </Select>
         </FormControl>
       </Grid>
       <Grid size={4}>
 
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Что увидеть</InputLabel>
+          <InputLabel id="attraction-label">Что увидеть</InputLabel>
           <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={attraction}
+            labelId="attraction-label"
+            id="attraction"
+            value={filters.attraction}
             label="Что посмотреть"
-            onChange={handleAttractionChange}
+            onChange={handleSelectChange}
           >
             <MenuItem value={"Хомлины"}>Хомлины</MenuItem>
             <MenuItem value={"Ворота"}>Ворота</MenuItem>
