@@ -1,28 +1,41 @@
-import * as React from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Grid from '@mui/material/Grid';
-import { routes } from '../../data/rroutes'
+import { routes as data } from '../../data/rroutes'
+import { useState } from 'react';
 
 var regions = []
-routes.map((item) => {
-  regions = ([...regions, ...item.districts])
+data.map((item) => {
+  regions = new Set([...regions, ...item.districts])
 })
-const uniqRegions = new Set([...regions])
 
 var trafficLights = []
-routes.map((item) => {
+data.map((item) => {
   trafficLights.push(item.trafficlight)
 })
-const uniqTL = new Set([...trafficLights])
+const uniqTL = [...new Set([...trafficLights])]
 
+const Filters = ({ filters, setFilters }) => {
+  const [district, setDistrict] = useState('');
+  const [trafficLights, setTrafficLights] = useState('');
+  const [attractions, setAttractions] = useState('');
 
-const Filters = ({filters, setFilters}) => {
-  const handleSelectChange = (event) => {
-    const key = event.target.id
-      return  setFilters({...filters, [key]: event.target.textContext})      
+  const handleSelectChange = (e) => {
+    console.log(e.target.name)
+    if (e.target.name === 'district') {
+      setDistrict(e.target.value)
+      setFilters({ ...filters, district: e.target.value })
+    } else if (e.target.name === 'trafficLight') {
+      setTrafficLights(e.target.value)
+      setFilters({ ...filters, trafficLights: e.target.value })
+
+    }
+    else if (e.target.name === 'attraction') {
+      setAttractions(e.target.value)
+      setFilters({ ...filters, attraction: e.target.value })
+    }
   };
 
 
@@ -35,11 +48,12 @@ const Filters = ({filters, setFilters}) => {
           <Select
             labelId="district-label"
             id="district-label"
-            value={filters.district}
+            name='district'
+            value={district}
             label="Район"
             onChange={handleSelectChange}
           >
-            {[...uniqRegions].map((region, index) => {
+            {[...regions].map((region, index) => {
               return <MenuItem key={index} id={"district"} value={region}>{region}</MenuItem>
 
             })}
@@ -54,11 +68,12 @@ const Filters = ({filters, setFilters}) => {
           <Select
             labelId="trafficLight-label"
             id="trafficLight"
-            value={filters.trafficLight}
+            name='trafficLight'
+            value={trafficLights}
             label="Сколько светофоров"
             onChange={handleSelectChange}
           >
-            {[...uniqTL].map((item, index) => {
+            {uniqTL.map((item, index) => {
               return <MenuItem key={index} value={item}>{item}</MenuItem>
 
             })}
@@ -73,8 +88,9 @@ const Filters = ({filters, setFilters}) => {
           <Select
             labelId="attraction-label"
             id="attraction"
-            value={filters.attraction}
+            value={attractions}
             label="Что посмотреть"
+            name='attraction'
             onChange={handleSelectChange}
           >
             <MenuItem value={"Хомлины"}>Хомлины</MenuItem>
