@@ -5,22 +5,25 @@ import RouteCard from '../../components/RouteCard';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { routes as data } from '../../data/rroutes';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 const Home = () => {
   const [filters, setFilters] = useState({ district: null, trafficLights: null, attraction: null })
+  const [cardsData, setCarsdDAta] = useState([])
 
-  console.log(filters)
+  useEffect(() => {
+    const arr = data.filter((item )=> { if (filters.district==null){return true} else {return item.districts.includes(filters.district) }})
+    setCarsdDAta(arr)
 
-  // const arr = data.filter(item => item.)
+  }, [filters])
 
   return (
     <Container maxWidth="lg">
       <Header />
       <Filters filters={filters} setFilters={setFilters} />
       <Grid container spacing={2}>
-        {data.map((route) => {
+        {cardsData.map((route) => {
           return <Grid size={4} key={route.id}><RouteCard route={route} /></Grid>
         }
         )}
