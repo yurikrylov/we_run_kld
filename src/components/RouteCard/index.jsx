@@ -7,7 +7,7 @@ export default function RouteCard({route}) {
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         sx={{ height: 140 }}
-        image="https://mui.com/static/images/cards/contemplative-reptile.jpg"
+        image= {route.fotolink}
         title="green iguana"
       />
       <CardContent>

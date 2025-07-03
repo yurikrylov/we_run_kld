@@ -1,8 +1,4 @@
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import Grid from '@mui/material/Grid';
+import {InputLabel, MenuItem, FormControl, Select, Grid} from '@mui/material';
 import { routes as data } from '../../data/rroutes'
 import { useState } from 'react';
 
@@ -15,11 +11,10 @@ data.map((item) => {
   trafficLightsList.push(item.trafficlight)
 })
 trafficLightsList = [...new Set([...trafficLightsList])]
-var attractionsList =[]
+var attractionsList = []
 data.map((item) => {
   attractionsList = new Set([...attractionsList, ...item.attractions])
 })
-
 
 const Filters = ({ filters, setFilters }) => {
   const [district, setDistrict] = useState('');
@@ -41,8 +36,6 @@ const Filters = ({ filters, setFilters }) => {
     }
   };
 
-
-
   return (
     <Grid container spacing={2}>
       <Grid size={4}>
@@ -58,7 +51,6 @@ const Filters = ({ filters, setFilters }) => {
           >
             {[...districtsList].map((region, index) => {
               return <MenuItem key={index} id={"district"} value={region}>{region}</MenuItem>
-
             })}
 
           </Select>
@@ -78,7 +70,6 @@ const Filters = ({ filters, setFilters }) => {
           >
             {trafficLightsList.map((item, index) => {
               return <MenuItem key={index} value={item}>{item}</MenuItem>
-
             })}
 
           </Select>
@@ -98,7 +89,6 @@ const Filters = ({ filters, setFilters }) => {
           >
             {[...attractionsList].sort().map((item, index) => {
               return <MenuItem key={index} value={item}>{item}</MenuItem>
-
             })} </Select>
         </FormControl>
       </Grid>

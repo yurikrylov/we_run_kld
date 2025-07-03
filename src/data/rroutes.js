@@ -1,109 +1,113 @@
 //import { districts } from "./constants"
 export const routes = [
-    
-     {
+    {
         id: 1,
         name: 'Круг от "Кофейни номер 3", 6\u00A0км',
         desc: 'Любимый маршрут капитана клуба Шорты',
         distance: 6,
         districts: ["Центральный"],
         trafficlight: "мало",
-        attractions: ["Амалиенау","Центральный парк","Дом с горгульей"],
-        maplink:'https://yandex.ru/maps/-/CCUFVCd6cC',
-        fotolinks:[]
-    },  {
+        attractions: ["Амалиенау", "Центральный парк", "Дом с горгульей"],
+        maplink: 'https://yandex.ru/maps/-/CCUFVCd6cC',
+        fotolink: 'picture1.jpg'
+    },
+    {
         id: 2,
         name: 'Круг от "Кофейни номер 3", 5\u00A0км',
         desc: "Не любимый маршрут капитана клуба Шорты",
         distance: 5,
         districts: ["Центральный"],
         trafficlight: "мало",
-        attractions: ["Амалиенау","Центральный парк","Парк Победы", "Памятник 1200 гвардейцам"],
-        maplink:'https://yandex.ru/maps/-/CCU8a2QNDD',
-        fotolinks:[]
+        attractions: ["Амалиенау", "Центральный парк", "Парк Победы", "Памятник 1200 гвардейцам"],
+        maplink: 'https://yandex.ru/maps/-/CCU8a2QNDD',
+        fotolink: 'picture2.jpg'
     },
-           {
+    {
         id: 3,
         name: "Октябрьский остров",
-        desc:'Пробежка вокруг филиала Третьяковской галереи и стадиона ',
+        desc: 'Пробежка вокруг филиала Третьяковской галереи и стадиона Ростех Арена',
         distance: 5,
         districts: ["Московский"],
         trafficlight: "нет",
         attractions: ["Третьяковская галерея", "Ростех арена", "Остров Канта", "Кафедральный Собор"],
-        maplink:'https://yandex.com/maps/-/CHfmmS0r',
-        fotolinks:[]
-    },  {
+        maplink: 'https://yandex.com/maps/-/CHfmmS0r',
+        fotolink: 'picture3.jpg'
+    },
+    {
         id: 4,
         name: "Марауненхоф",
-        desc:'Ботсад — Верхний пруд — Музей янтаря',
+        desc: 'Ботсад — Верхний пруд — Музей янтаря',
         distance: 7,
         districts: ["Ленинградский"],
         trafficlight: "мало",
         attractions: ["Парк Юность", "Ботанический сад", "Музей Янтаря", "Верхний пруд"],
-        maplink:'https://yandex.com/maps/-/CHfmeZ1L',
-        fotolinks:[]
-    },  {
+        maplink: 'https://yandex.com/maps/-/CHfmeZ1L',
+        fotolink: 'picture4.jpg'
+    },
+    {
         id: 10,
         name: "Веложорожка Сельма-Чкаловск",
-        desc:'Пробежка без светофоров по велодорожке',
+        desc: 'Пробежка без светофоров(почти) по велодорожке',
         distance: 9,
         districts: ["Центральный"],
         trafficlight: "мало",
         attractions: ["Велодорожка"],
-        maplink:'https://yandex.com/maps/-/CHfmyYlX',
-        fotolinks:[]
-    },    {
+        maplink: 'https://yandex.com/maps/-/CHfmyYlX',
+        fotolink: 'picture5.jpg'
+    }, {
         id: 11,
         name: "Понарт — Батальная — Летнее озеро",
-        desc:'Познакомится с Балтрайоном',
+        desc: 'Познакомится с Балтрайоном',
         distance: 6,
         districts: ["Московский"],
         trafficlight: "мало",
         attractions: ["Понарт", "Летнее озеро", "Зимнее озеро"],
-        maplink:'https://yandex.com/maps/-/CHfm5UIm',
-        fotolinks:[]
-    },{
+        maplink: 'https://yandex.com/maps/-/CHfm5UIm',
+        fotolink: 'picture6.jpg'
+    },
+    {
         id: 6,
         name: "Полумарафон в центре",
-        desc:'Посмотреть половину города за одну пробежку',
+        desc: 'Посмотреть половину города за одну пробежку',
         distance: 21,
         districts: ["Центральный", "Ленинградский"],
         trafficlight: "много",
-        attractions: ["Третьяковская галерея", "Ростех арена","Рыбная деревня", "Амалиенау", "Верхний пруд", "Нижний пруд", "Музей Мирового океана"],
-        maplink:'https://ttrails.ru/routes/21-km-ot-amalienau-bakery-do-kofeyni-',
-        fotolinks:[]
-    },  {
+        attractions: ["Третьяковская галерея", "Ростех арена", "Рыбная деревня", "Амалиенау", "Верхний пруд", "Нижний пруд", "Музей Мирового океана"],
+        maplink: 'https://ttrails.ru/routes/21-km-ot-amalienau-bakery-do-kofeyni-',
+        fotolink: 'picture7.jpg'
+    },
+    {
         id: 7,
         name: "Полумарафон в Балтрайоне",
-        desc:'Посмотреть вторую половину города за одну пробежку',
+        desc: 'Посмотреть вторую половину города за одну пробежку',
         distance: 21,
         districts: ["Московский", "Центральный"],
         trafficlight: "много",
-        attractions: ["Балтийский парк", "Парк Родина", "Кафедральный собор", "Драматический театр", "Амалиенау"],
-        maplink:'https://ttrails.ru/routes/cherez-baltrayon',
-        fotolinks:[]
-    },{
+        attractions: ["Балтийский парк", "Парк Родина", "Кафедральный Собор", "Драматический театр", "Амалиенау"],
+        maplink: 'https://ttrails.ru/routes/cherez-baltrayon',
+        fotolink: 'picture8.jpg'
+    },
+    {
         id: 8,
         name: "Все хомлины",
-        desc:'Увидеть всех хомлинов',
+        desc: 'Увидеть всех хомлинов',
         distance: 7,
         districts: ["Московский"],
         trafficlight: "много",
         attractions: ["Все Хомлины"],
-        maplink:null,
-        fotolinks:[]
-    },{
+        maplink: null,
+        fotolink: '../assets/picture1'
+    },
+    {
         id: 9,
         name: "Все ворота",
-        desc:'Посмотреть все оставшиеся ворота',
+        desc: 'Посмотреть все оставшиеся ворота',
         distance: 12,
         districts: ["Московский"],
         trafficlight: "много",
         attractions: ["Все ворота"],
-        maplink:null,
-        fotolinks:[]
+        maplink: null,
+        fotolinks: []
     }
-
 ]
 
- 
