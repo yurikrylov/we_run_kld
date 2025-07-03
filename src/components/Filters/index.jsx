@@ -6,16 +6,20 @@ import Grid from '@mui/material/Grid';
 import { routes as data } from '../../data/rroutes'
 import { useState } from 'react';
 
-var regions = []
+var districtsList = []
 data.map((item) => {
-  regions = new Set([...regions, ...item.districts])
+  districtsList = new Set([...districtsList, ...item.districts])
+})
+var trafficLightsList = []
+data.map((item) => {
+  trafficLightsList.push(item.trafficlight)
+})
+trafficLightsList = [...new Set([...trafficLightsList])]
+var attractionsList =[]
+data.map((item) => {
+  attractionsList = new Set([...attractionsList, ...item.attractions])
 })
 
-var trafficLights = []
-data.map((item) => {
-  trafficLights.push(item.trafficlight)
-})
-const uniqTL = [...new Set([...trafficLights])]
 
 const Filters = ({ filters, setFilters }) => {
   const [district, setDistrict] = useState('');
@@ -30,7 +34,6 @@ const Filters = ({ filters, setFilters }) => {
     } else if (e.target.name === 'trafficLight') {
       setTrafficLights(e.target.value)
       setFilters({ ...filters, trafficLights: e.target.value })
-
     }
     else if (e.target.name === 'attraction') {
       setAttractions(e.target.value)
@@ -53,7 +56,7 @@ const Filters = ({ filters, setFilters }) => {
             label="Район"
             onChange={handleSelectChange}
           >
-            {[...regions].map((region, index) => {
+            {[...districtsList].map((region, index) => {
               return <MenuItem key={index} id={"district"} value={region}>{region}</MenuItem>
 
             })}
@@ -73,7 +76,7 @@ const Filters = ({ filters, setFilters }) => {
             label="Сколько светофоров"
             onChange={handleSelectChange}
           >
-            {uniqTL.map((item, index) => {
+            {trafficLightsList.map((item, index) => {
               return <MenuItem key={index} value={item}>{item}</MenuItem>
 
             })}
@@ -93,10 +96,10 @@ const Filters = ({ filters, setFilters }) => {
             name='attraction'
             onChange={handleSelectChange}
           >
-            <MenuItem value={"Хомлины"}>Хомлины</MenuItem>
-            <MenuItem value={"Ворота"}>Ворота</MenuItem>
-            <MenuItem value={"Пруд"}>Пруд</MenuItem>
-          </Select>
+            {[...attractionsList].sort().map((item, index) => {
+              return <MenuItem key={index} value={item}>{item}</MenuItem>
+
+            })} </Select>
         </FormControl>
       </Grid>
     </Grid>

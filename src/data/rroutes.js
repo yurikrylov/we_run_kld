@@ -1,3 +1,4 @@
+//import { districts } from "./constants"
 export const routes = [
     
      {
@@ -7,7 +8,7 @@ export const routes = [
         distance: 6,
         districts: ["Центральный"],
         trafficlight: "мало",
-        attractions: [],
+        attractions: ["Амалиенау","Центральный парк","Дом с горгульей"],
         maplink:'https://yandex.ru/maps/-/CCUFVCd6cC',
         fotolinks:[]
     },  {
@@ -17,7 +18,7 @@ export const routes = [
         distance: 5,
         districts: ["Центральный"],
         trafficlight: "мало",
-        attractions: [],
+        attractions: ["Амалиенау","Центральный парк","Парк Победы", "Памятник 1200 гвардейцам"],
         maplink:'https://yandex.ru/maps/-/CCU8a2QNDD',
         fotolinks:[]
     },
@@ -28,7 +29,7 @@ export const routes = [
         distance: 5,
         districts: ["Московский"],
         trafficlight: "нет",
-        attractions: [],
+        attractions: ["Третьяковская галерея", "Ростех арена", "Остров Канта", "Кафедральный Собор"],
         maplink:'https://yandex.com/maps/-/CHfmmS0r',
         fotolinks:[]
     },  {
@@ -38,7 +39,7 @@ export const routes = [
         distance: 7,
         districts: ["Ленинградский"],
         trafficlight: "мало",
-        attractions: [],
+        attractions: ["Парк Юность", "Ботанический сад", "Музей Янтаря", "Верхний пруд"],
         maplink:'https://yandex.com/maps/-/CHfmeZ1L',
         fotolinks:[]
     },  {
@@ -48,7 +49,7 @@ export const routes = [
         distance: 9,
         districts: ["Центральный"],
         trafficlight: "мало",
-        attractions: [],
+        attractions: ["Велодорожка"],
         maplink:'https://yandex.com/maps/-/CHfmyYlX',
         fotolinks:[]
     },    {
@@ -58,7 +59,7 @@ export const routes = [
         distance: 6,
         districts: ["Московский"],
         trafficlight: "мало",
-        attractions: [],
+        attractions: ["Понарт", "Летнее озеро", "Зимнее озеро"],
         maplink:'https://yandex.com/maps/-/CHfm5UIm',
         fotolinks:[]
     },{
@@ -68,7 +69,7 @@ export const routes = [
         distance: 21,
         districts: ["Центральный", "Ленинградский"],
         trafficlight: "много",
-        attractions: [],
+        attractions: ["Третьяковская галерея", "Ростех арена","Рыбная деревня", "Амалиенау", "Верхний пруд", "Нижний пруд", "Музей Мирового океана"],
         maplink:'https://ttrails.ru/routes/21-km-ot-amalienau-bakery-do-kofeyni-',
         fotolinks:[]
     },  {
@@ -76,9 +77,9 @@ export const routes = [
         name: "Полумарафон в Балтрайоне",
         desc:'Посмотреть вторую половину города за одну пробежку',
         distance: 21,
-        districts: ["Московский"],
+        districts: ["Московский", "Центральный"],
         trafficlight: "много",
-        attractions: [],
+        attractions: ["Балтийский парк", "Парк Родина", "Кафедральный собор", "Драматический театр", "Амалиенау"],
         maplink:'https://ttrails.ru/routes/cherez-baltrayon',
         fotolinks:[]
     },{
@@ -88,7 +89,7 @@ export const routes = [
         distance: 7,
         districts: ["Московский"],
         trafficlight: "много",
-        attractions: [],
+        attractions: ["Все Хомлины"],
         maplink:null,
         fotolinks:[]
     },{
@@ -98,7 +99,7 @@ export const routes = [
         distance: 12,
         districts: ["Московский"],
         trafficlight: "много",
-        attractions: [],
+        attractions: ["Все ворота"],
         maplink:null,
         fotolinks:[]
     }

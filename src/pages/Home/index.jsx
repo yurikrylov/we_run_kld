@@ -14,6 +14,18 @@ const Home = () => {
 
   useEffect(() => {
     const arr = data.filter((item )=> { if (filters.district==null){return true} else {return item.districts.includes(filters.district) }})
+      .filter((item)=>{ 
+        if (filters.trafficLights==null)
+          {return true} 
+        else 
+        {return item.trafficlight ==filters.trafficLights}
+      })
+      .filter((item)=>{
+        if (filters.attraction==null)
+          {return true} 
+        else 
+        {return item.attractions.includes(filters.attraction) }
+      })
     setCarsdDAta(arr)
 
   }, [filters])
