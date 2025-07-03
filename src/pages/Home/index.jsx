@@ -1,11 +1,16 @@
-import React from 'react'
 import Filters from '../../components/Filters'
 import Header from '../../components/Header'
 import RouteCard from '../../components/RouteCard';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { routes as data } from '../../data/rroutes';
-import { useState, useEffect } from 'react';
+import { React, useState, useEffect } from 'react';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
+
 
 
 const Home = () => {
@@ -34,7 +39,7 @@ const Home = () => {
     <Container maxWidth="lg">
       <Header />
       <Filters filters={filters} setFilters={setFilters} />
-      <Grid container spacing={2}>
+      <Grid container spacing={2} sx={{mt:4}}>
         {cardsData.map((route) => {
           return <Grid size={4} key={route.id}><RouteCard route={route} /></Grid>
         }

@@ -1,4 +1,4 @@
-import {InputLabel, MenuItem, FormControl, Select, Grid} from '@mui/material';
+import { InputLabel, MenuItem, FormControl, Select, Grid, Button } from '@mui/material';
 import { routes as data } from '../../data/rroutes'
 import { useState } from 'react';
 
@@ -15,6 +15,7 @@ var attractionsList = []
 data.map((item) => {
   attractionsList = new Set([...attractionsList, ...item.attractions])
 })
+
 
 const Filters = ({ filters, setFilters }) => {
   const [district, setDistrict] = useState('');
@@ -35,10 +36,15 @@ const Filters = ({ filters, setFilters }) => {
       setFilters({ ...filters, attraction: e.target.value })
     }
   };
-
+  const clearFilters = () => {
+    setFilters({ district: null, attractions: null, trafficLights: null })
+    setDistrict('')
+    setTrafficLights('')
+    setAttractions('')
+  }
   return (
     <Grid container spacing={2}>
-      <Grid size={4}>
+      <Grid size={3}>
         <FormControl fullWidth>
           <InputLabel id="district-label">Район</InputLabel>
           <Select
@@ -56,7 +62,7 @@ const Filters = ({ filters, setFilters }) => {
           </Select>
         </FormControl>
       </Grid>
-      <Grid size={4}>
+      <Grid size={3}>
 
         <FormControl fullWidth>
           <InputLabel id="trafficLight-label">Сколько светофоров</InputLabel>
@@ -75,7 +81,7 @@ const Filters = ({ filters, setFilters }) => {
           </Select>
         </FormControl>
       </Grid>
-      <Grid size={4}>
+      <Grid size={3}>
 
         <FormControl fullWidth>
           <InputLabel id="attraction-label">Что увидеть</InputLabel>
@@ -91,6 +97,9 @@ const Filters = ({ filters, setFilters }) => {
               return <MenuItem key={index} value={item}>{item}</MenuItem>
             })} </Select>
         </FormControl>
+      </Grid>
+      <Grid size={3}>
+        <Button variant="text" size='large' onClick={() => clearFilters()}>Сбросить</Button>
       </Grid>
     </Grid>
   )
