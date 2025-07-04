@@ -7,8 +7,8 @@ export default function RouteCard({route}) {
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
         sx={{ height: 140 }}
-        image= {route.fotolink}
-        title="green iguana"
+        image= {route.photolink}
+        title="фото маршрута"
       />
       <CardContent>
         <Typography sx={{ height: 80 }} gutterBottom variant="h5" component="div">
@@ -18,7 +18,9 @@ export default function RouteCard({route}) {
           {route.desc}
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions sx={{ justifyContent: 'space-between' }}>
+                <Button         sx={{ height: 80 }} href={null} variant="text">ОТКРЫТЬ</Button>
+
         <Button         sx={{ height: 80 }} href={route.maplink} variant="text">КАРТА</Button>
       </CardActions>
     </Card>

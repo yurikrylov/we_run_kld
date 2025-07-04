@@ -9,7 +9,7 @@ export const routes = [
         trafficlight: "мало",
         attractions: ["Амалиенау", "Центральный парк", "Дом с горгульей"],
         maplink: 'https://yandex.ru/maps/-/CCUFVCd6cC',
-        fotolink: 'picture1.jpg'
+        photolink: 'picture1.jpg'
     },
     {
         id: 2,
@@ -20,7 +20,7 @@ export const routes = [
         trafficlight: "мало",
         attractions: ["Амалиенау", "Центральный парк", "Парк Победы", "Памятник 1200 гвардейцам"],
         maplink: 'https://yandex.ru/maps/-/CCU8a2QNDD',
-        fotolink: 'picture2.jpg'
+        photolink: 'picture2.jpg'
     },
     {
         id: 3,
@@ -31,7 +31,7 @@ export const routes = [
         trafficlight: "нет",
         attractions: ["Третьяковская галерея", "Ростех арена", "Остров Канта", "Кафедральный Собор"],
         maplink: 'https://yandex.com/maps/-/CHfmmS0r',
-        fotolink: 'picture3.jpg'
+        photolink: 'picture3.jpg'
     },
     {
         id: 4,
@@ -42,10 +42,10 @@ export const routes = [
         trafficlight: "мало",
         attractions: ["Парк Юность", "Ботанический сад", "Музей Янтаря", "Верхний пруд"],
         maplink: 'https://yandex.com/maps/-/CHfmeZ1L',
-        fotolink: 'picture4.jpg'
+        photolink: 'picture4.jpg'
     },
     {
-        id: 10,
+        id: 5,
         name: "Веложорожка Сельма-Чкаловск",
         desc: 'Пробежка без светофоров(почти) по велодорожке',
         distance: 9,
@@ -53,20 +53,20 @@ export const routes = [
         trafficlight: "мало",
         attractions: ["Велодорожка"],
         maplink: 'https://yandex.com/maps/-/CHfmyYlX',
-        fotolink: 'picture5.jpg'
+        photolink: 'picture5.jpg'
     }, {
-        id: 11,
+        id: 6,
         name: "Понарт — Батальная — Летнее озеро",
-        desc: 'Познакомится с Балтрайоном',
+        desc: 'Познакомиться с Балтрайоном',
         distance: 6,
         districts: ["Московский"],
         trafficlight: "мало",
         attractions: ["Понарт", "Летнее озеро", "Зимнее озеро"],
         maplink: 'https://yandex.com/maps/-/CHfm5UIm',
-        fotolink: 'picture6.jpg'
+        photolink: 'picture6.jpg'
     },
     {
-        id: 6,
+        id: 7,
         name: "Полумарафон в центре",
         desc: 'Посмотреть половину города за одну пробежку',
         distance: 21,
@@ -74,10 +74,10 @@ export const routes = [
         trafficlight: "много",
         attractions: ["Третьяковская галерея", "Ростех арена", "Рыбная деревня", "Амалиенау", "Верхний пруд", "Нижний пруд", "Музей Мирового океана"],
         maplink: 'https://ttrails.ru/routes/21-km-ot-amalienau-bakery-do-kofeyni-',
-        fotolink: 'picture7.jpg'
+        photolink: 'picture7.jpg'
     },
     {
-        id: 7,
+        id: 8,
         name: "Полумарафон в Балтрайоне",
         desc: 'Посмотреть вторую половину города за одну пробежку',
         distance: 21,
@@ -85,29 +85,29 @@ export const routes = [
         trafficlight: "много",
         attractions: ["Балтийский парк", "Парк Родина", "Кафедральный Собор", "Драматический театр", "Амалиенау"],
         maplink: 'https://ttrails.ru/routes/cherez-baltrayon',
-        fotolink: 'picture8.jpg'
-    },
-    {
-        id: 8,
-        name: "Все хомлины",
-        desc: 'Увидеть всех хомлинов',
-        distance: 7,
-        districts: ["Московский"],
-        trafficlight: "много",
-        attractions: ["Все Хомлины"],
-        maplink: null,
-        fotolink: '../assets/picture1'
+        photolink: 'picture8.jpg'
     },
     {
         id: 9,
+        name: "Все хомлины",
+        desc: 'Увидеть всех хомлинов',
+        distance: 11,
+        districts: ["Центральный", "Ленинградский"],
+        trafficlight: "много",
+        attractions: ["Все Хомлины"],
+        maplink: 'https://yandex.ru/maps/-/CHsznT38',
+        photolink: 'picture9.jpg'
+    },
+    {
+        id: 10,
         name: "Все ворота",
         desc: 'Посмотреть все оставшиеся ворота',
         distance: 12,
-        districts: ["Московский"],
+        districts: ["Московский", "Ленинградский"],
         trafficlight: "много",
         attractions: ["Все ворота"],
-        maplink: null,
-        fotolinks: []
+        maplink: 'https://yandex.ru/maps/-/CHszzY6l',
+        photolink: 'picture10.jpg'
     }
 ]
 

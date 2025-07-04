@@ -16,14 +16,12 @@ data.map((item) => {
   attractionsList = new Set([...attractionsList, ...item.attractions])
 })
 
-
 const Filters = ({ filters, setFilters }) => {
   const [district, setDistrict] = useState('');
   const [trafficLights, setTrafficLights] = useState('');
   const [attractions, setAttractions] = useState('');
 
   const handleSelectChange = (e) => {
-    console.log(e.target.name)
     if (e.target.name === 'district') {
       setDistrict(e.target.value)
       setFilters({ ...filters, district: e.target.value })
